@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output
+frontend/dist/
+backend/dist/
+*.js.map
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Test
+coverage/
+.nyc_output/
+.pytest_cache/
+
+# Docker
+docker-compose.override.yml
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Redis dump
+dump.rdb

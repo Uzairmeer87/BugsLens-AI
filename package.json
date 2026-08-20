@@ -1,0 +1,26 @@
+{
+  "name": "buglens-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered software testing and code-quality platform",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:ai\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:ai": "cd ai-service && uvicorn app.main:app --reload --port 8000",
+    "build": "concurrently \"npm run build:frontend\" \"npm run build:backend\"",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../ai-service && pip install -r requirements.txt",
+    "docker:up": "docker-compose up --build",
+    "docker:down": "docker-compose down",
+    "seed": "cd backend && npm run seed",
+    "test": "concurrently \"npm run test:frontend\" \"npm run test:backend\" \"npm run test:ai\"",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && npm test",
+    "test:ai": "cd ai-service && pytest"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
